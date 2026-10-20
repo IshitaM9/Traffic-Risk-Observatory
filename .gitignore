@@ -1,11 +1,42 @@
+# Python environments and caches
 .venv/
+venv/
+env/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local secrets
 .env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local datasets and generated analysis artifacts
+data/
+!data/.gitkeep
+outputs/
+!outputs/.gitkeep
+
+# Model weights and exported inference artifacts
+*.pt
+*.onnx
+*.engine
+*.tflite
+
+# Run artifacts and media
 data/videos/
 *.mp4
 *.avi
 *.mov
-*.pt
 runs/
-.pytest_cache/
+
+# Temporary and operating-system files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

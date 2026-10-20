@@ -1,0 +1,72 @@
+{
+  "frame_width": 3840,
+  "frame_height": 2160,
+  "source_fps": 30,
+  "frame_skip": 2,
+  "window_seconds": 5,
+  "vehicle_classes": ["car", "bus", "truck", "motorcycle"],
+  "max_track_gap_samples": 3,
+  "stop_speed_threshold_px_s": 12,
+  "abrupt_deceleration_px_s2": 100,
+  "minimum_observations_for_quality": 3,
+  "score_weights": {
+    "occupancy": 0.45,
+    "occupancy_increase": 0.15,
+    "motion_variability": 0.25,
+    "stopped_fraction": 0.15
+  },
+  "feature_ranges": {
+    "occupancy_mean_vehicles": [0, 4],
+    "occupancy_increase_vehicles": [0, 2],
+    "speed_std_px_s": [0, 100],
+    "stopped_fraction": [0, 1]
+  },
+  "technical_summary": {
+    "risk_score_thresholds": [50, 70],
+    "low_detection_count_threshold": 3
+  },
+  "regions": [
+    {
+      "id": "primary",
+      "label": "Primary visible carriageway (draft polygon; verify against video)",
+      "enabled": true,
+      "visibility": "normal",
+      "polygon": [[1250, 700], [1820, 700], [2590, 2100], [760, 2100]],
+      "rows": 5,
+      "columns": 2,
+      "display_names": {
+        "r01_c01": "Far 1",
+        "r01_c02": "Far 2",
+        "r02_c01": "Far 3",
+        "r02_c02": "Far 4",
+        "r03_c01": "Middle 1",
+        "r03_c02": "Middle 2",
+        "r04_c01": "Near 1",
+        "r04_c02": "Near 2",
+        "r05_c01": "Near 3",
+        "r05_c02": "Near 4"
+      }
+    },
+    {
+      "id": "secondary",
+      "label": "Partly obscured carriageway (disabled pending boundary review)",
+      "enabled": false,
+      "visibility": "limited",
+      "polygon": [[1850, 700], [2250, 700], [3800, 2050], [2850, 2050]],
+      "rows": 5,
+      "columns": 2,
+      "display_names": {
+        "r01_c01": "Other Road 1",
+        "r01_c02": "Other Road 2",
+        "r02_c01": "Other Road 3",
+        "r02_c02": "Other Road 4",
+        "r03_c01": "Other Road 5",
+        "r03_c02": "Other Road 6",
+        "r04_c01": "Other Road 7",
+        "r04_c02": "Other Road 8",
+        "r05_c01": "Other Road 9",
+        "r05_c02": "Other Road 10"
+      }
+    }
+  ]
+}
